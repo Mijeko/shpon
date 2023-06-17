@@ -16,6 +16,16 @@ block contents
                         src: '/assets/images/slider/homeBigSlider/1.png',
                     },
                     {
+                        title: 'Большое поступление!',
+                        description: 'Мебельные щиты из лиственницы и березы!',
+                        src: '/assets/images/slider/homeBigSlider/2.png',
+                    },
+                    {
+                        title: 'Акция',
+                        description: 'Пиломатериал Ясень<br>Дальневосточный от 55 тыс. руб/м3',
+                        src: '/assets/images/slider/homeBigSlider/2.png',
+                    },
+                    {
                         title: 'Акция',
                         description: 'Пиломатериал Ясень<br>Дальневосточный от 55 тыс. руб/м3',
                         src: '/assets/images/slider/homeBigSlider/2.png',
@@ -23,7 +33,7 @@ block contents
                 ]
             each item, index in bigSliderItems
                 +homeBigSliderItem(item)
-        .swiper-pagination.custom-slider-pagination
+        .swiper-pagination.custom-slider-pagination.big-slider-pagination
         .swiper-button-next.custom-slider-button-next
         .swiper-button-prev.custom-slider-button-prev
         .big-slider-mobile-progress
