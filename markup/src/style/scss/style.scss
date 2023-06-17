@@ -52,8 +52,12 @@
   .block-info {
 
     &-item {
-      width: 100%;
+      width: 100% !important;
       margin-top: 20px;
+      max-height: 240px;
+      overflow: hidden;
+      position: relative;
+
 
       &-image {
         box-shadow: none;
