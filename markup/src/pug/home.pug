@@ -1,0 +1,120 @@
+extends include/layer
+
+include include/mixin/homeBigSiderItem
+include include/mixin/blockInfoItem
+include include/mixin/sectionItem
+include include/mixin/advantageItem
+
+block contents
+    .swiper.big-slider
+        .swiper-wrapper
+            -
+                var bigSliderItems = [
+                    {
+                        title: 'Акция',
+                        description: 'Пиломатериал Ясень<br>Дальневосточный от 55 тыс. руб/м3',
+                        src: '/assets/images/slider/homeBigSlider/1.png',
+                    },
+                    {
+                        title: 'Акция',
+                        description: 'Пиломатериал Ясень<br>Дальневосточный от 55 тыс. руб/м3',
+                        src: '/assets/images/slider/homeBigSlider/2.png',
+                    },
+                ]
+            each item, index in bigSliderItems
+                +homeBigSliderItem(item)
+        .swiper-pagination.custom-slider-pagination
+        .swiper-button-next.custom-slider-button-next
+        .swiper-button-prev.custom-slider-button-prev
+        .big-slider-mobile-progress
+            .swiper-pagination.big-slider-mobile-progress-pagination
+            #pagination-control-fraction
+    .container
+        .block-info.swiper
+            .swiper-wrapper.block-info-list
+                -
+                    var blockInfoList = [
+                        {
+                            title: 'Распродажа',
+                            description: 'Мебельные щиты из березы сорт ЭЭ и ЭС со СКИДКОЙ 30%',
+                            src: '/assets/images/slider/blockInfo/1.png',
+                        },
+                        {
+                            title: 'Новое поступление',
+                            description: 'Мебельные щиты из лиственницы!',
+                            src: '/assets/images/slider/blockInfo/2.png',
+                        },
+                        {
+                            title: 'Акция',
+                            description: 'Пиломатериал Дуб от 49 000 руб/куб',
+                            src: '/assets/images/slider/blockInfo/3.png',
+                        },
+                    ]
+                each item, index in blockInfoList
+                    +blockInfoItem(item)
+
+        .page-title.center.h2 Каталог
+        .catalog-sections
+            -
+                var sections = [
+                    {
+                        title: 'Пиломатериал',
+                        image: '/assets/images/catalog/sections/1.png',
+                    },
+                    {
+                        title: 'Щит мебельный',
+                        image: '/assets/images/catalog/sections/2.png',
+                    },
+                    {
+                        title: 'Шпон натуральный',
+                        image: '/assets/images/catalog/sections/3.png',
+                    },
+                    {
+                        title: 'МДФ шпонированный',
+                        image: '/assets/images/catalog/sections/4.png',
+                    },
+                    {
+                        title: 'Кромка',
+                        image: '/assets/images/catalog/sections/5.png',
+                    },
+                    {
+                        title: 'Фанера березовая',
+                        image: '/assets/images/catalog/sections/6.png',
+                    },
+                    {
+                        title: 'Гибкая фанера',
+                        image: '/assets/images/catalog/sections/6.png',
+                    },
+                    {
+                        title: 'Элементы для лестниц',
+                        image: '/assets/images/catalog/sections/7.png',
+                    },
+                ]
+            each section, index in sections
+                +sectionItem(section)
+        .index-about
+            .index-about-title Компания «Мастер Шпон» – поставщик материалов для производства интерьеров, мебели, дверей
+            .index-about-text Компания ООО «Мастер Шпон» занимается оптово-розничной реализацией высококачественного натурального шпона, шпона файн-лайн, пиломатериала ценных пород дерева, мебельных щитов, кромки и шпонированного МДФ производства Голландии. Компания на протяжении уже 20 лет удерживает за собой одно из ведущих мест на российском рынке и успела зарекомендовать себя как надежный партнер, завоевав положительную профессиональную репутацию. Продукция деревообработки пользуется заслуженным спросом. Мы представляем необходимый ассортимент качественных материалов, как ценных пород, так и более распространенных видов древесины.
+    .advantages
+        .container.advantages-list
+            -
+                var blockInfoList = [
+                    {
+                        title: '20 лет',
+                        description: 'Опыт работы с государственными \n' +
+                                'и коммерческими фабриками, заводами и мастерскими по всей России.',
+                        icon: '/assets/images/safe.svg',
+                    },
+                    {
+                        title: 'Большой ассортимент',
+                        description: 'На данный момент площадь наших складов составляет более 2500 м2, а ассортимент свыше 1000 позиций',
+                        icon: '/assets/images/stock.svg',
+                    },
+                    {
+                        title: 'Доставка',
+                        description: 'Склады в Новосибирске, Барнауле и Красноярске. В другие города организуем доставку транспортными компаниями',
+                        icon: '/assets/images/delivery.svg',
+                    },
+                ]
+            each item, index in blockInfoList
+                +advantageItem(item)

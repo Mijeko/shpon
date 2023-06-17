@@ -1,0 +1,54 @@
+extends include/layer
+
+include include/mixin/sectionItem
+include include/block/breadcrumbs
+
+block contents
+    .container
+        +breadcrumbs([
+            {
+                title: 'Главная',
+            },
+            {
+                title: 'Каталог',
+            },
+        ])
+        .page-title Каталог
+        .catalog-sections
+            -
+                var sections = [
+                    {
+                        title: 'Пиломатериал',
+                        image: '/assets/images/catalog/sections/1.png',
+                    },
+                    {
+                        title: 'Щит мебельный',
+                        image: '/assets/images/catalog/sections/2.png',
+                    },
+                    {
+                        title: 'Шпон натуральный',
+                        image: '/assets/images/catalog/sections/3.png',
+                    },
+                    {
+                        title: 'МДФ шпонированный',
+                        image: '/assets/images/catalog/sections/4.png',
+                    },
+                    {
+                        title: 'Кромка',
+                        image: '/assets/images/catalog/sections/5.png',
+                    },
+                    {
+                        title: 'Фанера березовая',
+                        image: '/assets/images/catalog/sections/6.png',
+                    },
+                    {
+                        title: 'Гибкая фанера',
+                        image: '/assets/images/catalog/sections/6.png',
+                    },
+                    {
+                        title: 'Элементы для лестниц',
+                        image: '/assets/images/catalog/sections/7.png',
+                    },
+                ]
+            each section, index in sections
+                +sectionItem(section)

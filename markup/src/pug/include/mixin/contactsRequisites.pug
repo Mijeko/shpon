@@ -1,0 +1,1 @@
+include requisiteItemmixin contactsRequisites(items,size)    if(size)        div(class="contacts-requisites " + size)            each item,index in items                +requisiteItem(item)    else        div(class="contacts-requisites")            each item,index in items                +requisiteItem(item)

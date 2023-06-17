@@ -1,0 +1,70 @@
+extends include/layer
+
+include include/block/breadcrumbs
+include include/mixin/contactsRequisites
+
+block contents
+    .page-container.container
+        .page-side
+            include include/block/page-side
+        .page-content
+            +breadcrumbs([
+                {
+                    title: 'Главная',
+                },
+                {
+                    title: 'Контакты',
+                },
+            ])
+            .page-title Контакты
+            .contacts-page
+                .contacts-page-label ЦЕНТРАЛЬНЫЙ ОФИС В Г. НОВОСИБИРСКЕ:
+                +contactsRequisites([
+                    {key: 'Адрес', value: '630056, Новосибирская область, г. Новосибирск, ул. Варшавская 4, офис 2'},
+                    {key: 'Тел.', value: '+7 (383) 306 24 70; +7 913 902 69 73'},
+                    {key: 'Факс.', value: '+7 (383) 334 76 25'},
+                    {key: 'Email', value: 'master-shpon@mail.ru'},
+                    {key: 'Режим работы', value: 'пн-пт, 9:00-18:00, обед 13:00-14:00'},
+                ])
+                .contacts-map
+                    img(src="/assets/images/contacts/map/nsk.png")
+
+
+                .contacts-page-label ФИЛИАЛ В Г. БАРНАУЛЕ:
+                +contactsRequisites([
+                    {key: 'Адрес', value: '656922, Алтайский край, г. Барнаул, ул. Попова 179Б'},
+                    {key: 'Тел.', value: '+7 (383) 306 24 70; +7 913 902 69 73'},
+                    {key: 'Факс.', value: '+7 (383) 334 76 25'},
+                    {key: 'Email', value: 'master-shpon@mail.ru'},
+                    {key: 'Режим работы', value: 'пн-пт, 9:00-18:00, обед 13:00-14:00'},
+                ])
+                .contacts-map
+                    img(src="/assets/images/contacts/map/brn.png")
+
+
+                .contacts-page-label ФИЛИАЛ В Г. КРАСНОЯРСКЕ:
+                +contactsRequisites([
+                    {key: 'Адрес', value: 'г. Красноярск, ул. 2-я Брянская, 50'},
+                    {key: 'Тел.', value: '+7 (383) 306 24 70; +7 913 902 69 73'},
+                    {key: 'Факс.', value: '+7 (383) 334 76 25'},
+                    {key: 'Email', value: 'master-shpon@mail.ru'},
+                    {key: 'Режим работы', value: 'пн-пт, 9:00-18:00, обед 13:00-14:00'},
+                ])
+                .contacts-map
+                    img(src="/assets/images/contacts/map/krs.png")
+
+
+                .contacts-page-label РЕКВИЗИТЫ КОМПАНИИ:
+                +contactsRequisites([
+                    {key: 'ИНН:', value: '5408024631'},
+                    {key: 'КПП:', value: '540801001'},
+                    {key: 'ОГРН:', value: '1195476060560'},
+                    {key: 'Юридический адрес:', value: '630057, Россия, Новосибирская обл., г. Новосибирск, ул. Варшавская 4/8, офис 2'},
+                    {key: 'Почтовый адрес:', value: '630056, Россия, Новосибирская обл., г. Новосибирск, а/я 137'},
+                    {key: 'БИК:', value: '045004774'},
+                    {key: 'Корреспондентский счет:', value: '30101810600000000774'},
+                    {key: 'Расчетный счет:', value: '40702810223000012846'},
+                    {key: 'ФИЛИАЛ "НОВОСИБИРСКИЙ"', value: 'АО "АЛЬФА-БАНК"'},
+                    {key: 'Директор:', value: 'Вигандт Евгений Райнольдович'},
+                ], 'big')
+    include include/block/feedback-form

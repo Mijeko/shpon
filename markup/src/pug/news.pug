@@ -1,0 +1,74 @@
+extends include/layer
+
+include include/block/breadcrumbs
+include include/mixin/newsElement
+include include/mixin/pagination
+
+block contents
+    .page-container.container
+        .page-side
+            include include/block/page-side
+        .page-content
+            +breadcrumbs([
+                {
+                    title: 'Главная',
+                },
+                {
+                    title: 'Новости',
+                },
+            ])
+            .page-title Новости
+            .news-list-container
+                .news-list
+                    -
+                        var newsList = [
+                            {
+                                name: 'Новое поступление',
+                                description: 'Большое поступление цельноламельных щитов из сосны!',
+                                date: {
+                                    dm: '16 мая',
+                                    y: '2023',
+                                },
+                            },
+                            {
+                                name: 'Снижение цен',
+                                description: 'Снижены цены на мебельные щиты из ясеня сорт В!',
+                                date: {
+                                    dm: '15 мая',
+                                    y: '2023',
+                                },
+                            },
+                            {
+                                name: 'Распродажа',
+                                description: 'Шпонированный МДФ "Losan" (Голландия) со скидкой до 50% (только на складе в Новосибирске) !',
+                                date: {
+                                    dm: '10 мая',
+                                    y: '2023',
+                                },
+                            },
+                            {
+                                name: 'Акция',
+                                description: 'Дуб необрезной 50мм по 49 000 руб/м.куб!',
+                                date: {
+                                    dm: '5 мая',
+                                    y: '2023',
+                                },
+                            },
+                            {
+                                name: 'Акция',
+                                description: 'Дуб необрезной 50мм по 49 000 руб/м.куб!',
+                                date: {
+                                    dm: '3 мая',
+                                    y: '2023',
+                                },
+                            },
+                        ];
+                    each item,index in newsList
+                        +newsElement(item)
+            +pagination([
+                {key: 1, isActive: true},
+                {key: 2},
+                {key: 3},
+                {key: 4},
+            ])
+    include include/block/feedback-form

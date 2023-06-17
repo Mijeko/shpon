@@ -1,0 +1,70 @@
+extends include/layer
+
+include include/block/breadcrumbs
+include include/mixin/deliveryItem
+
+block contents
+    .page-container.container
+        .page-side
+            include include/block/page-side
+        .page-content
+            +breadcrumbs([
+                {
+                    title: 'Главная',
+                },
+                {
+                    title: 'Доставка',
+                },
+            ])
+            .page-title Доставка
+            .delivery-description Мы сотрудничаем только с проверенными транспортными компаниями, такими как: Деловые Линии, Энергия, Байкал Сервис, GTD, Меркурий-Авто, Почтовая лига, ПЭК, ЖелДорЭкспедиция.
+            .delivery-company-list
+                -
+                    var deliveries = [
+                        {img: '/assets/images/delivery/1.png'},
+                        {img: '/assets/images/delivery/2.png'},
+                        {img: '/assets/images/delivery/3.png'},
+                        {img: '/assets/images/delivery/8.png'},
+                        {img: '/assets/images/delivery/4.png'},
+                        {img: '/assets/images/delivery/5.png'},
+                        {img: '/assets/images/delivery/6.png'},
+                        {img: '/assets/images/delivery/7.png'},
+                    ];
+                each item,index in deliveries
+                    +deliveryItem(item)
+            .delivery-description
+                p Забрать продукцию самовывозом вы можете в городах <b>Новосибирск, Барнаул и Красноярск</b>.
+                p В других городах доставка осуществляется до склада транспортной компании. Мы качественно упаковываем продукцию и прилагаем необходимый комплект документов.
+                p Так же мы можем организовать доставку по <b>г. Новосибирск.</b>
+            .delivery-table-price
+                table
+                    tr
+                        td -
+                        td Район
+                        td Стоимость
+                    -
+                        var tableListPrice = [
+                            {id: 1, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 2, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 3, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 4, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 5, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 6, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 7, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 8, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 9, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 10, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 11, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 12, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 13, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 14, name: 'Советский район', cost: 'от 500 руб'},
+                            {id: 15, name: 'Советский район', cost: 'от 500 руб'},
+                        ];
+                    each item, index in tableListPrice
+                        tr
+                            td=item.id
+                            td=item.name
+                            td=item.cost
+            .delivery-description Точную стоимость и время доставки уточняйте у менеджеров компании «Мастер Шпон» по номеру телефона: +7 (383) 306-24-70, +7 (383) 334-76-25
+            img(src="/assets/images/map_delivery.png").delivery-map-geo
+    include include/block/feedback-form

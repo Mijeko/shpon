@@ -1,0 +1,1 @@
+.who-dev {  color: $text-color;  font-weight: 400;  font-size: 16px;  line-height: 24px;  text-decoration: none;  display: block;  transition: 0.3s ease all;  &:hover {    color: $active-color;  }  @include phone {    margin-top: 15px;  }  span {    font-weight: 800;  }}

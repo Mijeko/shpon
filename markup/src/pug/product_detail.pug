@@ -1,0 +1,91 @@
+extends include/layer
+
+include include/block/breadcrumbs
+include include/mixin/productDetailSliderItem
+include include/mixin/choose
+
+block contents
+    .page-container.container
+        .page-side
+            include include/block/page-side
+        .page-content
+            +breadcrumbs([
+                {
+                    title: 'Главная',
+                },
+                {
+                    title: 'Каталог',
+                },
+                {
+                    title: 'Пиломатериал из Ясеня',
+                },
+            ])
+            .page-title Пиломатериал из Ясеня
+            .product-detail-container
+                .product-detail-left
+                    .swiper.product-detail-slider
+                        .swiper-wrapper.product-detail-slider-wrapper
+                            -
+                                var slider = [
+                                    {image: '/assets/images/slider/product/1.png'},
+                                    {image: '/assets/images/slider/product/1.png'},
+                                    {image: '/assets/images/slider/product/1.png'},
+                                ];
+                            each slide, index in slider
+                                +productDetailSliderItem(slide)
+                        .swiper-button-next.custom-slider-button-next.product-detail-slider-button-next
+                        .swiper-button-prev.custom-slider-button-prev.product-detail-slider-button-prev
+                        .swiper-pagination.custom-slider-pagination
+                    .download-sheet
+                        .download-file Скачать прайс щит из березы
+                        .download-file Скачать инструкцию по эксплуатации мебельного щита
+                .product-detail-right
+                    .buy-button.product-detail-buy
+                        .buy-button__icon
+                            img(src="/assets/images/bag.svg")
+                        .buy-button__label.product-detail-buy__label Купить
+                    .product-detail-properties
+                        .product-detail-properties-item
+                            .product-detail-properties-label Тип древесины:
+                            .product-detail-properties-data
+                                +choose([
+                                    {title: 'Ясень'},
+                                    {title: 'Дуб', isActive: true},
+                                    {title: 'Бук'},
+                                    {title: 'Белый ясень'},
+                                    {title: 'Береза'},
+                                ])
+                        .product-detail-properties-item
+                            .product-detail-properties-label Размеры:
+                            .product-detail-properties-text 22 мм, 50 мм
+                        .product-detail-properties-item
+                            .product-detail-properties-label Категория:
+                            .product-detail-properties-text Цельноламельный, Сращенный
+                        .product-detail-properties-item
+                            .product-detail-properties-label Сортность:
+                            .product-detail-properties-text АА, АВ, АС
+            .page-title.h3 Цены на пиломатериал из Ясеня
+            .product-detail-prices
+                table
+                    tr
+                        td Ясень ДВ
+                        td Цена, руб./м3
+                    tr
+                        td Ясень 22мм L (2,0-3,0) необрезной
+                        td 55 000
+                    tr
+                        td Ясень 50мм L (1,0-1,9) Экстра
+                        td 99 000
+                    tr
+                        td Ясень 50мм L (2,0-2,9) Экстра
+                        td 114 000
+                    tr
+                        td Ясень 50мм L (3,0-4,5) Экстра
+                        td 119 000
+            .product-detail-description
+                p Пиломатериал из ясеня — это эластичный и в то же время твердый материал для строительных и столярных работ. По прочности ясень сопоставим с дубовой древесиной, за что ценится во многих сферах производства.
+                p Сухая обрезная доска из ясеня имеет широкую область применения. Ее используют для внутренней отделки помещений, производства мебели, изготовления лестниц, разнообразных декоративных элементов и даже для облицовки зданий.
+                p Из ясеня получается крепкий паркет, который не только привлекательно выглядит, но и отличается долгим сроком службы,
+                p Дизайнеры ценят пиломатериал из ясеня за гибкость. Это свойство позволяет работать с нестандартными формами и создавать неповторимые предметы интерьера.
+                p Купить обрезную сухую доску из ясеня можно в компании «Мастер Шпон». В каталоге представлены все варианты, которые есть в наличии.
+    include include/block/feedback-form

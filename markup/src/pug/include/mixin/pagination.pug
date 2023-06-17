@@ -1,0 +1,1 @@
+mixin pagination(items)    .pagination        each item,index in items            if(item.isActive)                a(href="#").pagination-item.isActive=item.key            else                a(href="#").pagination-item=item.key

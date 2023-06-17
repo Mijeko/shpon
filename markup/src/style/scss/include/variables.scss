@@ -1,0 +1,72 @@
+//fix
+$whatsapp-green: #25D366;
+//site colors
+$text-color: #333;
+$dark-color: #453A29;
+$active-color: #A08458;
+$layer-color: #F6EBDC;
+$orange: #f3a313;
+$main-color: #fff;
+$error-color: #B3261E;
+$light-border: #e6e6e6;
+$dns-light-border: #eaeaea;
+$dark-gray: #4E4E4E;
+
+$extra_brake_point_min: 1920;
+$large_brake_point_min: 1600;
+$medium_brake_point_min: 1200;
+$small_brake_point_min: 990;
+$tablet_brake_point_min: 640;
+$phone_brake_point_min: 320;
+
+$medium_brake_point_max: $large_brake_point_min - 1;
+$small_brake_point_max: $medium_brake_point_min - 1;
+$tablet_brake_point_max: $small_brake_point_min - 1;
+$phone_brake_point_max: $tablet_brake_point_min - 1;
+
+$phone: "(max-width: #{$phone_brake_point_max}px)";
+$after_phone: "(min-width: #{$phone_brake_point_max}px)";
+
+$tablet: "(max-width: #{$tablet_brake_point_max}px)";
+$after_tablet: "(min-width: #{$tablet_brake_point_max}px)";
+
+$small: "(max-width: #{$small_brake_point_max}px)";
+$medium: "(max-width: #{$medium_brake_point_max}px)";
+$large: "(min-width: #{$large_brake_point_min}px)";
+$extra: "(min-width: #{$extra_brake_point_min}px)";
+
+@mixin after_phone {
+  @media #{$after_phone} {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media #{$phone} {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media #{$tablet} {
+    @content;
+  }
+}
+
+@mixin after_tablet {
+  @media #{$after_tablet} {
+    @content;
+  }
+}
+
+@mixin small {
+  @media #{$small} {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media #{$medium} {
+    @content;
+  }
+}

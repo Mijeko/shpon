@@ -1,0 +1,67 @@
+extends include/layer
+
+include include/block/breadcrumbs
+include include/mixin/priceElement
+
+block contents
+    .page-container.container
+        .page-side
+            include include/block/page-side
+        .page-content
+            +breadcrumbs([
+                {
+                    title: 'Главная',
+                },
+                {
+                    title: 'Прайс-листы',
+                },
+            ])
+            .page-title Прайс
+            .price-list-container
+                .price-list-description Внимание, цены, указанные в прайсах, являются оптовыми и скидки не предоставляются.
+                .price-list
+                    -
+                        var priceList = [
+                            {
+                                name: 'Скачать основной прайс',
+                            },
+                            {
+                                name: 'Скачать прайс на щит из ясеня',
+                            },
+                            {
+                                name: 'Скачать прайс на щит березы',
+                            },
+                            {
+                                name: 'Скачать прайс на щит сосны',
+                            },
+                            {
+                                name: 'Скачать прайс на ступени, площадки и пр.',
+                            },
+                            {
+                                name: 'Скачать прайс на МДФ шпонированный',
+                            },
+                            {
+                                name: 'Скачать прайс на фанеру гибкую',
+                            },
+                            {
+                                name: 'Скачать прайс на комплектующие для лестниц',
+                            },
+                            {
+                                name: 'Скачать прайс на щиты из лиственницы',
+                            },
+                            {
+                                name: 'Скачать прайс на щит из дуба',
+                            },
+                            {
+                                name: 'Скачать прайс на шпон',
+                            },
+                            {
+                                name: 'Скачать прайс на кромку',
+                            },
+                            {
+                                name: 'Скачать прайс на пиломатериалы',
+                            },
+                        ];
+                    each item,index in priceList
+                        +priceElement(item)
+    include include/block/feedback-form

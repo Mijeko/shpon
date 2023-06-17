@@ -1,0 +1,5 @@
+mixin breadcrumbs(items)
+    .breadcrumbs
+        each breadItem,index in items
+            .breadcrumbs-item
+                a(href="/").breadcrumbs-link=breadItem.title

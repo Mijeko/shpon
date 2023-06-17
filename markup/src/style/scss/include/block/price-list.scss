@@ -1,0 +1,1 @@
+.price-list {  display: flex;  justify-content: space-between;  align-items: flex-start;  flex-wrap: wrap;  &-description {    font-weight: 400;    font-size: 20px;    line-height: 30px;    color: #1F1F1F;    margin-bottom: 20px;  }  &-item {    width: 45%;    margin-bottom: 40px;    @include phone {      width: 100%;      margin-bottom: 30px;    }  }}
