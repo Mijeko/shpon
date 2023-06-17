@@ -1,3 +1,34 @@
 extends include/layer
 
 block contents
+    .container
+        .custom-modal
+            .custom-modal-close
+                img(src="/assets/images/modal-close.svg")
+            .custom-modal-title Заказать обратный звонок
+            .modal-form-conainer
+                form.modal-form
+                    .modal-form-row
+                        .modal-form-col
+                            .modal-form-input
+                                input(type="text" placeholder="Имя")
+                                label.modal-form-input__label Имя
+                    .modal-form-row
+                        .modal-form-col
+                            .modal-form-input
+                                input(type="text" placeholder="Телефон")
+                                label.modal-form-input__label Телефон
+                    .modal-form-row
+                        .modal-form-col
+                            .modal-form-input
+                                input(type="text" placeholder="Введите символы с картинки")
+                                label.modal-form-input__label Введите символы с картинки
+                    .modal-form-row
+                        .modal-form-col
+                            .modal-form-captcha
+                                img(src="/assets/images/captcha.png")
+                    .modal-form-row
+                        .modal-form-col.modal-form-footer
+                            .modal-form-submit
+                                button.modal-form-submit.form-button Отправить
+                            .modal-form-agree Нажимая на кнопку, я соглашаюсь на передачу и обработку персональных данных

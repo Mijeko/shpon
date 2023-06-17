@@ -1,3 +1,51 @@
 extends include/layer
 
+include include/mixin/dropdown
+
 block contents
+    .container
+        .custom-modal.modal-request
+            .custom-modal-close
+                img(src="/assets/images/modal-close.svg")
+            .custom-modal-title Заявка на пиломатериал
+            .modal-form-conainer
+                form.modal-form
+                    .modal-form-row.x2
+                        .modal-form-col
+                            .modal-form-dropdown
+                                +dropdown([
+                                    {name: 'Барнаул', value: "Барнаул", selected: false},
+                                    {name: 'Красноярск', value: "Красноярск", selected: false},
+                                    {name: 'Новосибирск', value: "Новосибирск", selected: false},
+                                ])
+                        .modal-form-col
+                            .modal-form-input
+                                input(type="text" placeholder="Имя")
+                                label.modal-form-input__label Имя
+                    .modal-form-row
+                        .modal-form-col
+                            .modal-form-input
+                                input(type="text" placeholder="Email")
+                                label.modal-form-input__label Email
+                        .modal-form-col
+                            .modal-form-input
+                                input(type="text" placeholder="Телефон")
+                                label.modal-form-input__label Телефон
+                    .modal-form-row
+                        .modal-form-col
+                            .modal-form-input
+                                textarea(name="message" placeholder="Сообщение")
+                    .modal-form-row
+                        .modal-form-col
+                            .modal-form-input
+                                input(type="text" placeholder="Введите символы с картинки")
+                                label.modal-form-input__label Введите символы с картинки
+                    .modal-form-row
+                        .modal-form-col
+                            .modal-form-captcha
+                                img(src="/assets/images/captcha.png")
+                    .modal-form-row
+                        .modal-form-col.modal-form-footer.group
+                            .modal-form-submit
+                                button.modal-form-submit.form-button Отправить
+                            .modal-form-agree Нажимая на кнопку, я соглашаюсь на передачу и обработку персональных данных
