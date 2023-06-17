@@ -1,1 +1,1 @@
-mixin menuItem(item)    .menu-item        a(href=item.href, class='menu-link '+ item.isActive)            span=item.title
+mixin menuItem(item)    - var choosing = item.choosing ? "choosing" : "";    - var active = item.isActive ? "isActive" : "";    div(class="menu-item " + choosing)        a(href=item.href, class='menu-link ' + active)            span=item.title
