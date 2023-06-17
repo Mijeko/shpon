@@ -1,1 +1,10 @@
+cache/
+*cache*/
 node_modules
+backup*/
+build
+upload
+vendor
+assets
+tmp
+.idea
